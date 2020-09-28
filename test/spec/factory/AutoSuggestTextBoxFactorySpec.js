@@ -2,8 +2,7 @@
 
 var TestContainer = require('mocha-test-container-support');
 
-var domify = require('min-dom').domify,
-    domQuery = require('min-dom').query;
+var domQuery = require('min-dom').query;
 
 var assign = require('min-dash').assign;
 
@@ -39,7 +38,7 @@ describe('factory/AutoSuggestTextBoxFactory', function() {
     beforeEach(function() {
       entry = entryFactory.autoSuggest({ id: 'foo' });
 
-      container.appendChild(domify(entry.html));
+      container.appendChild(entry.html);
 
       wrapperNode = domQuery('.bpp-field-wrapper', container);
       assign(wrapperNode.style, { width: INPUT_WIDTH });
